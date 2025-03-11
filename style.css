@@ -1,0 +1,228 @@
+/* 🌍 Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+/* 🌞 Improved Light Mode */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f3f3f3, #e6e9ff); /* Soft Gradient */
+    color: black;
+}
+
+/* 🌙 Dark Mode */
+body.dark-mode {
+    background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+/* 🌓 Minimal Dark Mode Button */
+#theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+/* 🌙 Dark Mode Button Style */
+body.dark-mode #theme-toggle {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* ✨ Hover Effect */
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* 🔄 Smooth Theme Transition */
+body {
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+/* 🔥 Stylish Login Box */
+.login-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9); /* Increased opacity for better visibility */
+    backdrop-filter: blur(15px);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0px 12px 30px rgba(0, 153, 255, 0.3);
+    border: 2px solid rgba(0, 153, 255, 0.3);
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* 🌙 Dark Mode - Less Glow */
+body.dark-mode .login-container {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* ✨ Neon Animated Outline */
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 12px;
+    background: linear-gradient(45deg, 
+        rgba(0, 153, 255, 0.7), 
+        rgba(0, 255, 255, 0.7),
+        rgba(0, 255, 153, 0.7));
+    background-size: 300%;
+    z-index: -1;
+    animation: neon-move 5s linear infinite;
+    filter: blur(5px);
+}
+
+/* 🔥 Smooth Animated Neon Border */
+@keyframes neon-move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ✨ Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    text-align: center;
+    box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🌞 Light Mode Input Effect */
+body:not(.dark-mode) input {
+    border: 1px solid rgba(0, 153, 255, 0.5);
+}
+
+/* 🌙 Dark Mode - Inputs */
+body.dark-mode input {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* ✨ Placeholder Styling */
+input::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* 🌙 Dark Mode - Placeholder */
+body.dark-mode input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ✨ Login Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0099ff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+/* 🌙 Dark Mode Button */
+body.dark-mode button {
+    background: #0077cc;
+    box-shadow: none;
+}
+
+/* ✨ Hover Effect */
+button:hover {
+    background: #0077cc;
+    box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.8);
+}
+
+/* ✨ Welcome Message */
+#welcomeMessage {
+    display: none; /* Initially hidden */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    
+    /* Centering the message */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 🎉 Make Welcome Message Visible */
+.welcome-visible {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* 👤 Username inside Welcome Message */
+#welcomeMessage span#user {
+    display: inline-block;
+    max-width: 80%;
+    font-weight: bold;
+    font-size: 22px;
+    color: #007bff; /* Highlight username */
+    
+    /* Prevent line break */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* ✨ Toggle Between Forms (Sign In / Sign Up) */
+.toggle-text {
+    margin-top: 20px; /* Added minimum top margin for spacing */
+    font-size: 14px;
+}
+
+/* 🌟 Highlight & Change Cursor for Clickable Links */
+.toggle-text span {
+    color: #007bff;
+    cursor: pointer;  /* Changes cursor to pointer when hovered */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* ✨ Hover Effect */
+.toggle-text span:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Slightly darker blue on hover */
+}
+

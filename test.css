@@ -1,0 +1,1024 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🌟 Modern Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    padding: 15px 50px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 📚 Logo Styling */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ✨ Logo Hover Animation */
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* 📌 Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+/* 🎯 Hover Effect on Links */
+.nav-links a:hover {
+    color: #ffcc00;
+}
+/* 🔥 Underline Animation */
+.nav-links a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #ffcc00;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+/* 📌 Navbar Buttons */
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+/* .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+} */
+/* 📌 Sidebar */
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background: white;
+    height: 100vh;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* 🔎 Search Bar inside Sidebar */
+.sidebar-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 2px solid #007bff;
+    border-radius: 20px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    background: #f1f1f1;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    font-size: 18px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+/* 🔥 Focus Effect */
+.search-bar:focus {
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5);
+}
+
+/* 📌 Sidebar Filter Styling */
+.filter-group h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.filter-options label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.books-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: flex-start; /* Align books at the top */
+    max-width: 1200px;
+    margin: 20px auto 0 auto; /* Add margin on top */
+    min-height: 400px; /* Ensure space for books */
+    align-items: flex-start; /* Make sure books appear at the top */
+}
+
+
+/* 📖 Book Card */
+.book-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🖼 Book Image */
+.book-card img {
+    width: 100px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* ✨ Hover Effect */
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔥 Buttons */
+.buy-now, .add-to-cart {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.add-to-cart {
+    background: #28a745;
+}
+
+.buy-now:hover {
+    background: #0056b3;
+}
+
+.add-to-cart:hover {
+    background: #218838;
+}
+
+
+
+/* 🔹 Layout */
+.main-container {
+    display: flex;
+    margin-top: 80px;
+}
+
+/* 🔹 Sidebar */
+.sidebar {
+    
+    width: 250px;
+    padding: 20px;
+    background: white;
+    height: 100vh; /* Full viewport height */
+    position: sticky;
+    top: 70px; /* Sticks below the navbar */
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* In case content exceeds height */
+}
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.filter-options label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+/* 🔹 Books Section */
+.books-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;  /* Centers the cards horizontally */
+    align-items: flex-start;  /* Aligns cards at the top */
+    max-width: 1200px;  /* Prevents unnecessary stretching */
+    margin: 0 auto;  /* Centers the container */
+}
+
+
+.book-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 220px;
+    /* Reduced width */
+    min-height: auto;
+    /* Adjusted height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🔥 Hover Effect */
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 🖼 Book Image */
+.book-card img {
+    width: 100px;
+    /* Fixed image width */
+    height: 140px;
+    /* Fixed image height */
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* 📖 Book Title */
+.book-card h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* ✍ Author & Price */
+.book-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 2px 0;
+}
+
+/* 🔹 Buttons */
+.clear-filters {
+    background: #ff4b5c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+
+/* 🛒 Cart Button */
+.cart-button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+.cart-button:hover {
+    background: #e68900;
+}
+
+/* 🛍️ Cart Icon */
+.cart-icon {
+    font-size: 20px;
+}
+
+/* 🔴 Cart Counter (Red Notification Bubble) */
+#cart-count {
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
+
+/* Buttons for Book Cards */
+.buy-now,
+.add-to-cart {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.add-to-cart {
+    background: #28a745;
+}
+
+.buy-now:hover {
+    background: #0056b3;
+}
+
+.add-to-cart:hover {
+    background: #218838;
+}
+
+/* 🎯 Floating Add Book Button */
+.add-book-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-book-button:hover {
+    background: linear-gradient(135deg, #1e7e34, #145623);
+    transform: scale(1.05);
+}
+
+/* 📌 Responsive Design */
+@media screen and (max-width: 600px) {
+    .book-form-container {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* 📌 Add Book Form - Solid Background */
+.book-form-container {
+    display: none; /* Hidden initially */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 450px;
+    z-index: 1000;
+    border: 1px solid #ddd;
+    animation: fadeIn 0.3s ease-in-out;
+}
+/* 🔹 Smooth open/close animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -55%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* 🔹 Form Inner Design */
+.book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center; /* Aligns elements in center */
+}
+
+.book-form h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* 📌 Input Fields */
+.book-form label {
+    font-weight: bold;
+    color: #444;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.book-form input,
+.book-form select {
+    width: 100%;
+    max-width: 360px;  /* Ensures inputs don't stretch too wide */
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #f9f9f9;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box; /* Prevents overflow */
+}
+/* 🔹 Center Align Labels */
+.book-form label {
+    font-weight: bold;
+    color: #444;
+    font-size: 14px;
+    align-self: flex-start; /* Aligns labels to the left */
+    margin-left: 20px;
+}
+
+.book-form input::placeholder {
+    color: #999;
+}
+
+.book-form input:focus,
+.book-form select:focus {
+    border: 2px solid #007bff;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* 🖼 Upload Image Styling */
+#bookImage {
+    padding: 10px;
+    border: 2px dashed #007bff;
+    background: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    max-width: 360px;
+}
+
+#bookImage:hover {
+    border: 2px dashed #0056b3;
+    background: #eef5ff;
+}
+
+
+/* 🎨 Buttons */
+.book-form button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    max-width: 360px;
+}
+.book-form button:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: scale(1.05);
+}
+
+/* ❌ Cancel Button */
+.book-form .close-btn {
+    background: linear-gradient(135deg, #ff4d4d, #b30000);
+}
+
+.book-form .close-btn:hover {
+    background: linear-gradient(135deg, #b30000, #800000);
+    transform: scale(1.05);
+}
+
+.admin-login, .admin-logout {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.admin-login:hover, .admin-logout:hover {
+    background: #218838;
+}
+
+.delete-book {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete-book:hover {
+    background-color: darkred;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 🛠 Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 15px;
+        text-align: right;
+        border-radius: 5px;
+    }
+
+    .nav-links li {
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+
+
+
+
+
+
+
+/* 📌 Sell Books Button */
+.sell-books-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.sell-books-button:hover {
+    background: #0056b3;
+}
+
+/* 📌 Compact Sell Form */
+.sell-form-container,
+.payment-form-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 12px 39px; /* Reduced padding */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Reduced width */
+    z-index: 2000;
+    border: 1px solid #ddd;
+    animation: fadeIn 0.3s ease-in-out;
+}
+/* 🔹 Smooth open/close animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -55%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* 📌 Form Inner Styling */
+.sell-form, .payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Reduced spacing */
+    width: 100%;
+    align-items: center;
+}
+
+.sell-form h2, .payment-form h2 {
+    text-align: center;
+    color: #333;
+    font-size: 16px; /* Reduced font size */
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+
+
+/* 📌 Background Overlay - Ensures Blur Effect */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* backdrop-filter: blur(6px); Blurred Effect */
+    z-index: 1500; /* Ensures it's above the page */
+}
+
+/* 📌 Show overlay when form is active */
+.modal-overlay.active {
+    display: block;
+}
+
+/* 📌 Show Form with Animation */
+.show-form {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* 📌 Fix Click Issues */
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* 📌 Input Fields */
+.sell-form label,
+.payment-form label {
+    font-weight: bold;
+    color: #444;
+    font-size: 12px; /* Reduced font size */
+    margin-bottom: 2px;
+    align-self: flex-start;
+}
+
+
+.sell-form input,
+.sell-form select,
+.payment-form input {
+    width: 100%;
+    padding: 5px; /* Reduced padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #f9f9f9;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 📌 Focus Effect */
+.sell-form input:focus,
+.sell-form select:focus,
+.payment-form input:focus {
+    border: 1px solid #007bff;
+    background: white;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+/* 📌 File Upload Styling */
+#defectImages {
+    padding: 6px;
+    border: 1px dashed #007bff;
+    background: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+#defectImages:hover {
+    border-color: #0056b3;
+    background: #eef5ff;
+}
+/* 🎨 Buttons */
+.sell-form button,
+.payment-form button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+.sell-form button:hover,
+.payment-form button:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: scale(1.02);
+}
+
+/* 📌 Close Button */
+.close-btn {
+    background: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background: linear-gradient(135deg, #b30000, #800000);
+    transform: scale(1.02);
+
+}
+
+/* 📌 Hide Estimated Price Initially */
+#estimatedPriceSection {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* 📌 Smooth Fade-In Animation */
+.fade-in {
+    opacity: 1 !important;
+}
+
+/* 📌 Sell Button */
+#sellButton {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+}
+
+#sellButton:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: scale(1.02);
+}
+
+
+/* 📌 Mobile Optimization */
+@media screen and (max-width: 400px) {
+    .sell-form-container,
+    .payment-form-container {
+        width: 90%;
+    }
+}
+
+
+/* .sell-form-container,
+.payment-form-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 380px;
+   
+    max-height: 80vh;
+    overflow: hidden;
+    
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+.show-form {
+    display: block !important;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+} */
+
+/* Modern Loading Spinner */
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+/* 🔄 Smooth Spinning Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* 📌 Ensure Sell Books Button is Clickable */
+.sell-books-button {
+    position: relative;
+    z-index: 3000;
+}
+
+
+
+
+/* 📌 Compact Add Book Form */
+.book-form-container {
+    display: none; /* Hidden initially */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 320px; /* Reduced width */
+    z-index: 1000;
+    border: 1px solid #ddd;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+
+/* 🔹 Smooth open/close animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -55%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* 🔹 Form Inner Design */
+.book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center; /* Aligns elements in center */
+}
+
+.book-form h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* 📌 Input Fields */
+.book-form label {
+    font-weight: bold;
+    color: #444;
+    font-size: 13px;
+    margin-bottom: 4px;
+    align-self: flex-start;
+}
+
+.book-form input,
+.book-form select {
+    width: 100%;
+    max-width: 360px;  /* Ensures inputs don't stretch too wide */
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #f9f9f9;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box; /* Prevents overflow */
+}
+/* 🔹 Center Align Labels */
+.book-form label {
+    font-weight: bold;
+    color: #444;
+    font-size: 14px;
+    align-self: flex-start; /* Aligns labels to the left */
+    margin-left: 20px;
+}
+
+.book-form input::placeholder {
+    color: #999;
+}
+
+/* 📌 Focus Effect */
+.book-form input:focus,
+.book-form select:focus {
+    border: 1px solid #007bff;
+    background: white;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+/* 🖼 Upload Image Styling */
+#bookImage {
+    padding: 6px; /* Reduced padding */
+    border: 1px dashed #007bff;
+    background: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+
+#bookImage:hover {
+    border: 2px dashed #0056b3;
+    background: #eef5ff;
+}
+
+
+/* 🎨 Buttons */
+.book-form button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    max-width: 360px;
+}
+.book-form button:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: scale(1.02);
+}
+
+/* ❌ Cancel Button */
+.book-form .close-btn {
+    background: linear-gradient(135deg, #ff4d4d, #b30000);
+}
+
+.book-form .close-btn:hover {
+    background: linear-gradient(135deg, #b30000, #800000);
+    transform: scale(1.02);
+}

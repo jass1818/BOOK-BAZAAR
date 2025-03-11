@@ -1,0 +1,163 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* 🌟 Modern Navigation Bar */
+.navbar {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    padding: 15px 50px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    gap: 620px;
+}
+
+/* 📚 Logo Styling */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ✨ Logo Hover Animation */
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* 📌 Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+/* 🎯 Hover Effect on Links */
+.nav-links a:hover {
+    color: #ffcc00;
+}
+/* 🔥 Underline Animation */
+.nav-links a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #ffcc00;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+/* 📌 Navbar Buttons */
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* ✅ About Section */
+.about-container {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 100px 50px;
+    background: white;
+    gap: 300px;
+}
+
+.about-left {
+    width: 50%;
+}
+
+.about-right {
+    width: auto;
+    height: 300px; /* Set a fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden; /* Prevents large images from overflowing */
+}
+
+/* ✅ Image Styling */
+.about-right img {
+    width: 100%; /* Makes sure the image scales properly */
+    height: auto;
+    max-width: 250px; /* Restricts maximum width */
+    max-height: 250px; /* Restricts maximum height */
+    border-radius: 10px;
+}
+
+
+
+/* ✅ Project Details Section */
+.project-details {
+    padding: 50px;
+    background: #fafafa;
+}
+
+.project-details h2 {
+    color: #333;
+}
+
+/* ✅ Vision & Mission */
+.vision-mission {
+    padding: 50px;
+    background: #ffcc00;
+    text-align: center;
+}
+
+.vision-mission h2 {
+    color: #333;
+}
+
+.vision-mission p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.vision-mission ul {
+    list-style: none;
+    padding: 0;
+}
+
+.vision-mission li {
+    margin: 10px 0;
+}
+
+

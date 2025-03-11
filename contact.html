@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <nav>
+
+        <!-- 📌 Navbar Links (Center) -->
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <!-- 🚪 Logout Button -->
+        <button id="logout">Logout</button>
+    </nav>
+
+    <!-- ✅ Contact Section -->
+    <section class="contact-container">
+        <h1>Contact Us</h1>
+        <p>If you have any questions, feel free to reach out to us.</p>
+
+        <div class="contact-details">
+            <div class="contact-info">
+                <h2>📞 Get in Touch</h2>
+                <p><strong>Email:</strong> support@booksbazaar.com</p>
+                <p><strong>Phone:</strong> +91 9876543210</p>
+                <p><strong>Address:</strong> Sector 17, Mohali, Punjab, India</p>
+            </div>
+
+            <!-- ✅ Google Map Embed (Optional) -->
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps?q=Mohali,Punjab,India&output=embed" 
+                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <!-- ✅ Contact Form -->
+        <h2>📩 Send Us a Message</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <!-- ✅ Success Message -->
+        <p id="formMessage" class="success-message"></p>
+    </section>
+
+     <!-- ✅ Policies Section -->
+     <section class="policies-container">
+        <h2>📜 Our Policies</h2>
+
+        <!-- ✅ Return Policy -->
+        <div class="policy-item">
+            <button class="policy-header" onclick="togglePolicy('returnPolicy')">📦 Return Policy</button>
+            <div class="policy-content" id="returnPolicy">
+                <p>Books can be returned within **7 days** of purchase if they are in original condition.</p>
+                <p>We accept returns only for books that are defective, damaged during delivery, or incorrect.</p>
+                <p>Customers must request a return through our support team via email at support@booksbazaar.com.</p>
+                <p>After approval, the book must be shipped back within 3 days.</p>
+                <p>Once received, we will verify the condition and process a refund/replacement.</p>
+            </div>
+        </div>
+
+        <!-- ✅ Refund Policy -->
+        <div class="policy-item">
+            <button class="policy-header" onclick="togglePolicy('refundPolicy')">💰 Refund Policy</button>
+            <div class="policy-content" id="refundPolicy">
+                <p>Refunds are processed within **5-7 business days** after we receive the returned book.</p>
+                <p>The refund will be issued to the original payment method (credit card, UPI, or bank transfer).</p>
+                <p>If you haven’t received a refund within the mentioned timeframe, please contact us.</p>
+                <p>In case of COD orders, refunds will be processed via bank transfer.</p>
+                <p>Shipping fees are non-refundable unless the return is due to our mistake.</p>
+            </div>
+        </div>
+
+        <!-- ✅ Shipping Policy -->
+        <div class="policy-item">
+            <button class="policy-header" onclick="togglePolicy('shippingPolicy')">🚚 Shipping Policy</button>
+            <div class="policy-content" id="shippingPolicy">
+                <p>We offer **free shipping** on orders above ₹500.</p>
+                <p>Orders are shipped within **24-48 hours** of confirmation.</p>
+                <p>Delivery times vary by location but usually take **3-5 business days**.</p>
+                <p>Once shipped, a tracking ID will be shared via email or SMS.</p>
+                <p>If the package is delayed, please contact our support team.</p>
+            </div>
+        </div>
+
+        <!-- ✅ Privacy Policy -->
+        <div class="policy-item">
+            <button class="policy-header" onclick="togglePolicy('privacyPolicy')">🔒 Privacy Policy</button>
+            <div class="policy-content" id="privacyPolicy">
+                <p>We respect your privacy and **do not share personal data** with third parties.</p>
+                <p>Your personal information is encrypted and stored securely.</p>
+                <p>Only necessary details (name, phone number, address) are used for order processing.</p>
+                <p>For any privacy-related queries, contact us at support@booksbazaar.com.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="contact.js"></script>
+</body>
+</html>

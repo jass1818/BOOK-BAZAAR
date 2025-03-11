@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Books</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+
+    <!-- 🔹 Modern Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">📚 Books Bazaar</div>
+
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="nav-buttons">
+            <!-- 🛒 Cart Button -->
+            <button class="cart-button">
+                <span class="cart-icon">🛒</span> Cart
+                <span id="cart-count">0</span>
+            </button>
+
+            <!-- 🔑 Admin Login -->
+            <button class="admin-login" onclick="adminLogin()">🔑 Admin Login</button>
+        </div>
+
+        <!-- 🍔 Hamburger Menu for Mobile -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+
+    <div class="main-container">
+        <!-- 📌 Sidebar with Filters & Search -->
+        <aside class="sidebar">
+            <h3>Filter Books</h3>
+
+            <!-- 🔎 Search Bar in Sidebar -->
+            <div class="sidebar-search">
+                <input type="text" class="search-bar" id="searchInput" placeholder="Search books...">
+                <i class="ri-search-line search-icon"></i>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="filter-group">
+                <h4>Category</h4>
+                <div class="filter-options">
+                    <label><input type="checkbox" class="filter" value="fiction"> Fiction</label>
+                    <label><input type="checkbox" class="filter" value="non-fiction"> Non-Fiction</label>
+                    <label><input type="checkbox" class="filter" value="mystery"> Mystery</label>
+                    <label><input type="checkbox" class="filter" value="fantasy"> Fantasy</label>
+                </div>
+            </div>
+
+            <!-- Price Range -->
+            <div class="filter-group">
+                <h4>Price Range</h4>
+                <input type="range" id="priceRange" min="0" max="1000" value="500">
+                <span id="priceValue">Rs. 500</span>
+            </div>
+
+            <!-- Ratings Filter -->
+            <div class="filter-group">
+                <h4>Ratings</h4>
+                <div class="filter-options">
+                    <label><input type="radio" name="rating" value="5"> 5 Stars</label>
+                    <label><input type="radio" name="rating" value="4"> 4 Stars & above</label>
+                    <label><input type="radio" name="rating" value="3"> 3 Stars & above</label>
+                </div>
+            </div>
+
+            <!-- Reset Button -->
+            <button class="clear-filters">Reset Filters</button>
+
+            <!-- 📌 Sell Old Books Button (Below Sidebar) -->
+            <button class="sell-books-button" onclick="openSellForm()">📚 Sell Your Old Book</button>
+
+            <!-- 📌 Sell Book Form (Hidden Initially) -->
+            <div class="sell-form-container" id="sellForm">
+                <div class="sell-form">
+                    <h2>Sell Your Old Book</h2>
+
+                    <label>Book Name:</label>
+                    <input type="text" id="bookName" placeholder="Enter book name" required>
+
+                    <label>Purchase Date:</label>
+                    <input type="date" id="purchaseDate" required>
+
+                    <label>Publication Date:</label>
+                    <input type="date" id="publicationDate" required>
+
+                    <label>Defects (if any):</label>
+                    <input type="text" id="defects" placeholder="Describe any defects">
+
+                    <label>Upload Defect Images:</label>
+                    <input type="file" id="defectImages" multiple accept="image/*">
+
+                    <label>MRP of Book (₹):</label>
+                    <input type="number" id="mrp" placeholder="Enter MRP" required>
+
+                    <!-- 📌 Modern Loading Animation (Initially Hidden) -->
+                    <div id="loadingIndicator" class="loader" style="display:none;"></div>
+
+                    <!-- 📌 Estimated Price (Initially Hidden) -->
+                    <p id="priceDisplay" style="display:none; font-weight: bold;"></p>
+
+                    <!-- 📌 Button to Show Estimated Price -->
+                    <button id="sellButton" onclick="showEstimatedPrice()">Sell</button>
+
+                    <button class="close-btn" onclick="closeSellForm()">Cancel</button>
+                    <!-- 📌 Modern Loading Animation (Initially Hidden) -->
+                    <div id="loadingIndicator" class="loader" style="display:none;"></div>
+
+                    <!-- 📌 Estimated Price (Initially Hidden) -->
+                    <p id="priceDisplay" style="display:none; font-weight: bold;"></p>
+
+                </div>
+            </div>
+
+            
+            <!-- 📌 Payment Details Form (Initially Hidden) -->
+            <div class="payment-form-container" id="paymentForm">
+                <div class="payment-form">
+                    <h2>Enter Bank Details</h2>
+
+                    <label>Account Holder Name:</label>
+                    <input type="text" id="accountName" placeholder="Enter name" required>
+
+                    <label>Bank Name:</label>
+                    <input type="text" id="bankName" placeholder="Enter bank name" required>
+
+                    <label>Account Number:</label>
+                    <input type="number" id="accountNumber" placeholder="Enter account number" required>
+
+                    <label>IFSC Code:</label>
+                    <input type="text" id="ifscCode" placeholder="Enter IFSC code" required>
+
+                    <button onclick="confirmSale()">Confirm Sale</button>
+                    <button class="close-btn" onclick="closePaymentForm()">Cancel</button>
+                </div>
+            </div>
+
+
+
+            
+        </aside>
+
+        <!-- 📚 Books Listing -->
+        <!-- ➕ Floating Add Book Button -->
+        <button class="add-book-button" onclick="openBookForm()">➕ Add Book</button>
+
+        <!-- 📌 Add Book Form (Hidden by Default) -->
+        <div class="book-form-container" id="bookForm">
+            <div class="book-form">
+                <h2>Add New Book</h2>
+                <label>Book Title:</label>
+                <input type="text" id="bookTitle" placeholder="Enter book title" required>
+
+                <label>Author:</label>
+                <input type="text" id="bookAuthor" placeholder="Enter author's name" required>
+
+                <label>Price:</label>
+                <input type="number" id="bookPrice" placeholder="Enter price" required>
+
+                <label>Category:</label>
+                <select id="bookCategory">
+                    <option value="fiction">Fiction</option>
+                    <option value="non-fiction">Non-Fiction</option>
+                    <option value="mystery">Mystery</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="self-help">Self-Help</option>
+                </select>
+
+                <label>Upload Image:</label>
+                <input type="file" id="bookImage" accept="image/*" required>
+
+                <button type="submit" onclick="saveBook(event)">Save</button>
+
+                <button class="close-btn" onclick="closeBookForm()">Cancel</button>
+            </div>
+        </div>
+        <!-- 📚 Books Listing -->
+        <section class="books-container" id="booksList">
+            <!-- Books will be added dynamically here -->
+        </section>
+
+
+
+    </div>
+
+    <script src="test.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>c
+
+    <!-- 🔹 Navigation Bar -->
+    <nav>
+        <!-- 👤 Profile Icon (Left Side) -->
+        <div class="profile" id="profileContainer">
+            <img src="default-profile.png" alt="Profile" id="profileIcon">
+            <span id="username"></span>
+        </div>
+
+        <!-- 📌 Navbar Links (Center) -->
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- 🚪 Logout Button -->
+        <button id="logout">Logout</button>
+    </nav>
+
+    <!-- 🔎 Search Bar -->
+    <div class="search-bar-container">
+        <input type="text" class="search-bar" placeholder="Search for books, authors, or categories...">
+    </div>
+
+    <!-- 🔹 Hero Section -->
+    <section class="hero" id="welcomeContainer">
+        <p id="animatedWelcome"></p>
+        <p id="animatedBooksBazaar"></p>
+    </section>
+
+  <!-- 🔹 Scroll Section (Appears After Animation) -->
+<section class="scroll-section" id="scrollSection">
+    <h2>Discover More <span>Good things.</span></h2>
+    <div class="scroll-content">
+        <!-- 📚 Latest Books Card -->
+        <div class="card">
+            <img src="images/newbooks.jpg" alt="Latest Books">
+            <h3>Latest Books </h3>
+            <p>Explore new arrivals</p>
+            <!-- <button>Show me all</button> -->
+            <a href="#" class="row-btn" id="newBook">Show me all</a>
+        </div>
+
+        <!-- 🔄 Sell Old Books Card -->
+        <div class="card">
+            <img src="images/used book.webp" alt="Sell Books">
+            <h3>Buy/Sell your Books</h3>
+            <p>Sell your books easily</p>
+            <a href="#" class="row-btn" id="oldBook">Show me all</a>
+        </div>
+
+        <!-- ✏️ Stationary Products Card -->
+        <div class="card">
+            <img src="images/stationary item.jpg" alt="Stationary Products">
+            <h3>Stationary Products</h3>
+            <p>All essential stationary</p>
+            <a href="#" class="row-btn" id="stationary">Show me all</a>
+        </div>
+    </div>
+</section>
+ 
+
+
+
+    <script src="home.js"></script>
+</body>
+</html>
